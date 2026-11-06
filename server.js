@@ -6,7 +6,7 @@ const path = require('node:path');
 const crypto = require('node:crypto');
 
 const ROOT = __dirname;
-const PUBLIC = path.join(ROOT, 'public');
+const PUBLIC = fs.existsSync(path.join(ROOT, 'public')) ? path.join(ROOT, 'public') : ROOT;
 const DATA_DIR = process.env.TRIG_DATA_DIR || path.join(ROOT, 'data');
 const SETTINGS_PATH = path.join(DATA_DIR, 'settings.json');
 const RESULTS_PATH = path.join(DATA_DIR, 'results.json');
