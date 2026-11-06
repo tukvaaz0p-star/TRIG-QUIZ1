@@ -1,0 +1,71 @@
+/* Простой быстрый интерфейс без внешних библиотек, шрифтов и анимаций. */
+* { box-sizing: border-box; }
+body { margin: 0; background: #f6f7fa; color: #222; font: 16px/1.5 Arial, Helvetica, sans-serif; }
+.wrap { max-width: 780px; margin: 0 auto; padding: 0 16px; }
+header { background: #fff; border-bottom: 2px solid #315fa8; padding: 13px 0; }
+header strong { color: #254f91; font-size: 21px; letter-spacing: .5px; }
+header span { font-size: 13px; color: #666; margin-left: 12px; }
+main { min-height: calc(100vh - 145px); padding-top: 30px !important; padding-bottom: 30px !important; }
+footer { color: #777; font-size: 12px; padding-bottom: 20px !important; }
+.panel { background: #fff; border: 1px solid #d7dce5; padding: 24px; margin-bottom: 16px; }
+h1 { font-size: 27px; line-height: 1.25; margin: 0 0 12px; }
+h2 { font-size: 21px; line-height: 1.35; margin: 8px 0 19px; }
+h3 { font-size: 17px; margin: 0 0 8px; }
+p { margin: 8px 0 16px; }
+.muted { color: #666; }
+.small { font-size: 13px; }
+label { display: block; font-weight: bold; margin: 13px 0 5px; }
+input { font: inherit; width: 100%; padding: 10px; border: 1px solid #aeb8c9; background: #fff; border-radius: 0; }
+input:focus,button:focus-visible { outline: 2px solid #315fa8; outline-offset: 2px; }
+button { font: inherit; cursor: pointer; border: 1px solid #234d8e; padding: 9px 13px; background: #315fa8; color: white; border-radius: 0; }
+button:hover:not(:disabled) { background: #244b89; }
+button:disabled { opacity: .55; cursor: not-allowed; }
+button.secondary { background: #fff; color: #214b8e; border-color: #aeb8c9; }
+button.secondary:hover:not(:disabled) { background: #eef2f8; }
+button.danger { background: #9f3030; border-color: #852a2a; }
+button.danger:hover:not(:disabled) { background: #7e2424; }
+button.option { display: block; width: 100%; background: #fff; border: 1px solid #bcc6d6; color: #222; text-align: left; margin-bottom: 9px; min-height: 50px; }
+button.option:hover:not(:disabled) { background: #e9f0fb; border-color: #315fa8; }
+button.option b { color: #315fa8; margin-right: 12px; }
+button.wide { width: 100%; margin-top: 12px; }
+.row { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.notice { background: #f0f4fa; border-left: 3px solid #315fa8; padding: 11px 13px; margin: 15px 0; }
+.error { background: #fff2f2; border-left-color: #b23d3d; }
+.success { background: #eff8f0; border-left-color: #398349; }
+.time { font-size: 26px; font-weight: bold; color: #214b8e; font-variant-numeric: tabular-nums; }
+.time.low { color: #aa2525; }
+.progress { height: 8px; border: 1px solid #cfd6e0; margin: 13px 0 25px; }
+.progress > div { background: #315fa8; height: 100%; }
+.status { display: inline-block; font-weight: bold; font-size: 13px; padding: 2px 7px; background: #eef2f8; border: 1px solid #ced8e6; }
+.stats { display: flex; gap: 8px; flex-wrap: wrap; margin: 17px 0; }
+.stat { flex: 1 1 120px; padding: 12px; border: 1px solid #d7dce5; background: #fafbfc; }
+.stat strong { display: block; font-size: 24px; color: #214b8e; }
+.stat span { font-size: 12px; }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th,td { padding: 9px; text-align: left; border: 1px solid #d7dce5; }
+th { background: #eaeef5; }
+tr:nth-child(even) td { background: #fafbfc; }
+.review { border-top: 1px solid #ddd; padding: 16px 0 4px; }
+.review .correct { color: #28763c; }
+.review .wrong { color: #a12d2d; }
+.podium { display: flex; align-items: flex-end; justify-content: center; gap: 10px; margin: 40px 0 24px; }
+.place { flex: 1; min-width: 0; text-align: center; }
+.place .name { font-weight: bold; margin-bottom: 6px; overflow-wrap: anywhere; }
+.place .mark { font-size: 15px; margin-bottom: 8px; }
+.stand { border: 1px solid #b4bdcb; background: #e1e5ed; padding: 18px 0; font-size: 28px; font-weight: bold; }
+.stand.first { height: 145px; background: #f9e6b3; }
+.stand.second { height: 105px; background: #e4e8ee; }
+.stand.third { height: 75px; background: #ecd5c2; }
+@media(max-width:560px) {
+  main { padding-top: 15px !important; }
+  .panel { padding: 16px; }
+  h1 { font-size: 23px; }
+  h2 { font-size: 19px; }
+  header span { display: block; margin: 0; }
+  .podium { gap: 5px; }
+  .name { font-size: 12px; }
+  th,td { padding: 6px; font-size: 12px; }
+}
+@media print { header,footer,.buttons { display:none; } body { background:white; } .panel { border:0; } }

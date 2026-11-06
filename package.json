@@ -1,0 +1,8 @@
+{
+  "name": "trig-quiz",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Простой онлайн-тест по тригонометрии для одного занятия",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}
